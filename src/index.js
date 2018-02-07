@@ -1,11 +1,23 @@
 #! /usr/bin/env node
 
-function noop() {
-    console.log('noop')
+const chalk = require('chalk')
+const program = require('commander')
+const { parsePackage } = require('parse-package')
+
+function run() {
+    program
+        .arguments('<filename>.json')
+        .action(function(file) {
+            console.log(`File: ${chalk.bold.cyan(file)}`)
+            const out = parsePackage(file)
+            Object.keys(out).forEach(k => {
+                console.log(chalk.magenta('key:'), k, chalk.cyan('val:'), out[k])
+            })
+            return out
+        })
+        .parse(process.argv)
 }
 
-noop()
+run()
 
-module.exports = {
-    noop
-}
+module.exports = run

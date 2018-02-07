@@ -1,6 +1,6 @@
 {
   "name": "parse-package-cli",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "CLI for parse-package - node module",
   "main": "src/index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/anusaini/parse-package-cli#readme",
   "devDependencies": {
     "chai": "^4.1.2",
+    "commander": "^2.14.1",
     "eslint": "^4.17.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-import": "^2.8.0",
@@ -32,6 +33,10 @@
     "jasmine": "^3.0.0"
   },
   "dependencies": {
+    "chalk": "^2.3.0",
     "parse-package": "^3.0.0"
+  },
+  "bin": {
+    "parsePackage": "src/index.js"
   }
 }
