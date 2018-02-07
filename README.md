@@ -10,6 +10,7 @@ CLI for parse-package - node module
   npm i -g npm        # install latest npm
 
   npm i -g parse-package-cli # install cli tool for parsing package globally
+  npm i -g commander # will fix it soon.
 
   parsePackage filename
   # returns output
